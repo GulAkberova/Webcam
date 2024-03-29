@@ -1,0 +1,92 @@
+.cameraSection{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  background-color: #627254;
+}
+.cameraSectionDiv{
+  max-width: 500px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:flex-start;
+}
+.cameraBigDiv{
+   display: flex;
+   align-items: flex-start;
+   gap: 20px;
+   max-width: 500px;
+   width: 100%;
+}
+.cameraOpen{
+    padding: 25px 40px;
+    border: 1px dashed white;
+    border-radius: 5px;
+    background-color: #5a674f;
+    color:  white;
+    cursor: pointer;
+    font-size: 33px;
+}
+.cameraModal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  background-color: #5a674f;
+}
+.cameraDiv {
+  margin: auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #5a674f;
+  position: relative;
+}
+.camera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+.cameraBtn {
+  position: absolute;
+  top: 10;
+  right: 10;
+  z-index: 91;
+}
+.cameraBtnSave{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+.capturedImagesContainer{
+    display: flex;
+    gap: 10px;
+}
+.capturedImage{
+    border: 1px solid rgba(128, 128, 128, 0.234);
+    width: 100px;
+    height: 88px;
+    border-radius: 3px;
+    object-fit: cover;
+}
+.cameraSend{
+  padding: 10px 35px;
+  border-radius: 5px;
+  background-color: #5a674f;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+  margin-top: 10px;
+}
