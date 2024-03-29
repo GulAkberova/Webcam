@@ -11,7 +11,7 @@ function Camera() {
   const webcamRef = useRef(null);
 
   const handleOpenCamera = () => {
-    if (capturedImages.length <= 2) {
+    if (capturedImages.length <= 1) {
       setVisible(true);
     } else {
       showNotification("error", "Maksimum 2 resim çekebilirsiniz!");
@@ -37,6 +37,7 @@ function Camera() {
       })
     );
     showNotification("success", "Resimler başarıyla gönderildi!");
+    setCapturedImages([])
   };
 
   const showNotification = (type, message) => {
