@@ -7,7 +7,9 @@ function Camera() {
   const [visible, setVisible] = useState(false);
   const [capturedImages, setCapturedImages] = useState([]);
   const [notification, setNotification] = useState(null);
+  const [facingMode, setFacingMode] = useState("user");
   const webcamRef = useRef(null);
+
   const handleOpenCamera = () => {
     if (capturedImages.length <= 2) {
       setVisible(true);
@@ -43,6 +45,9 @@ function Camera() {
       setNotification(null);
     }, 3000);
   };
+  const toggleFacingMode = () => {
+    setFacingMode(prevMode => (prevMode === "user" ? "environment" : "user"));
+  };
   return (
     <>
       <section className="cameraSection">
@@ -58,10 +63,13 @@ function Camera() {
             {visible && (
               <div className="cameraModal">
                 <div className="cameraDiv">
-                  <button onClick={handleCloseCamera} className="cameraBtn">
+                  <button onClick={handleCloseCamera} className="cameraBtnClose">
                     Kapat
                   </button>
-                  <Webcam ref={webcamRef} mirrored={true} className="camera" />
+                  <button onClick={toggleFacingMode} className="cameraBtnBack" >
+                    Arka Kamera
+                  </button>
+                  <Webcam ref={webcamRef} mirrored={true}   videoConstraints={{ facingMode }} className="camera" />
                   <button
                     onClick={handleCaptureImage}
                     className="cameraBtnSave"

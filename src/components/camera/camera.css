@@ -54,11 +54,18 @@
     left: 0;
     width: 100vw;
     height: 100vh;
+    
 }
-.cameraBtn {
+.cameraBtnClose {
   position: absolute;
-  top: 10;
-  right: 10;
+  top: 10px;
+  left: 0 ;
+  z-index: 91;
+}
+.cameraBtnBack{
+  position: absolute;
+  top: 50px;
+  left: 0;
   z-index: 91;
 }
 .cameraBtnSave{
